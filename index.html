@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>АНО «СПП» | Помощь поиску пропавших</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #fef7e8;
+            color: #1a1e2b;
+            line-height: 1.4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .hero {
+            background: #f97316;
+            padding: 32px 24px 28px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .content {
+            padding: 28px 24px 32px;
+        }
+
+        .message {
+            background: #fff4e6;
+            border-left: 5px solid #f97316;
+            padding: 20px 20px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+            font-size: 1rem;
+        }
+
+        .message p {
+            margin-bottom: 12px;
+        }
+
+        .message strong {
+            color: #f97316;
+        }
+
+        .donation-card {
+            background: #ffffff;
+            border: 1px solid #ffdec2;
+            border-radius: 28px;
+            padding: 12px 6px 12px 6px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .donation-phone {
+            background: #f97316;
+            border-radius: 24px;
+            padding: 18px 20px;
+            color: white;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .donation-phone .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .phone-number {
+            font-size: 1.7rem;
+            font-weight: 700;
+            font-family: monospace;
+            letter-spacing: 1px;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 60px;
+            margin: 8px 0;
+        }
+
+        .phone-hint {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+
+        .btn-copy {
+            background: white;
+            color: #f97316;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .btn-copy:hover {
+            background: #fff0e0;
+            transform: scale(0.97);
+        }
+
+        .detail-block {
+            background: #f9fafc;
+            border-radius: 24px;
+            margin-top: 16px;
+            padding: 8px 4px;
+        }
+
+        .detail-btn {
+            width: 100%;
+            background: transparent;
+            border: 1.5px solid #ffcf9a;
+            padding: 14px 18px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: #2c2e3a;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .detail-btn span:first-child {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-btn .arrow {
+            font-size: 1.3rem;
+            transition: transform 0.2s;
+        }
+
+        .detail-btn.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .detail-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out;
+            background: white;
+            border-radius: 24px;
+            margin-top: 6px;
+        }
+
+        .detail-content.show {
+            max-height: 800px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .bank-details {
+            padding: 20px 18px;
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #f0e2d0;
+            font-size: 0.85rem;
+        }
+
+        .bank-details p {
+            margin-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .bank-details .label {
+            font-weight: 700;
+            min-width: 100px;
+            color: #f97316;
+        }
+
+        .bank-details .value {
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        .copy-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+
+        .small-copy {
+            background: #f2f2f5;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+            z-index: 1000;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #aaa;
+            margin-top: 24px;
+            padding: 0 20px 24px;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 12px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .phone-number {
+                font-size: 1.3rem;
+            }
+            .bank-details .label {
+                min-width: 85px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>АНО «СПП»</h1>
+        <p>Содействие поискам пропавших</p>
+    </div>
+    <div class="content">
+        <div class="message">
+            <p><strong>✨ Друг, привет!</strong></p>
+            <p>Чтобы проводить лекции и встречи в уюте, мы содержим помещение за свой счёт. </p>
+            <p>Будем рады любой помощи ❤️</p>
+        </div>
+
+        <div class="donation-card">
+            <div class="donation-phone">
+                <div class="label">📱 Перевод по номеру телефона</div>
+                <div class="phone-number">89507757624</div>
+                <div class="phone-hint">Ольга Юрьевна З. (Сбер) — с пометкой «на подвал»</div>
+                <button class="btn-copy" data-copy="89507757624">📋 Скопировать номер</button>
+            </div>
+
+            <div class="detail-block">
+                <button class="detail-btn" id="toggleDetailsBtn">
+                    <span>🏦 Реквизиты организации (юр. лицо)</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div id="detailsPanel" class="detail-content">
+                    <div class="bank-details">
+                        <p><span class="label">Полное название:</span><span class="value">Автономная Некоммерческая Организация «Содействие поискам пропавших»</span></p>
+                        <p><span class="label">Сокращённо:</span><span class="value">АНО «СПП»</span></p>
+                        <p><span class="label">Директор:</span><span class="value">Землянникова Ольга Юрьевна</span></p>
+                        <p><span class="label">Юр. адрес:</span><span class="value">394021, Воронеж, ул. Минская, д. 67/1, помещ. VII</span></p>
+                        <p><span class="label">Почтовый адрес:</span><span class="value">394021, Воронеж, ул. Минская, д. 67/1, помещ. VII</span></p>
+                        <p><span class="label">ИНН / КПП:</span><span class="value">3663164048 / 366301001</span>
+                            <button class="small-copy" data-copy="3663164048 / 366301001">Копировать</button>
+                        </p>
+                        <p><span class="label">ОГРН:</span><span class="value">123360016957</span>
+                            <button class="small-copy" data-copy="123360016957">Копировать</button>
+                        </p>
+                        <p><span class="label">Расчётный счёт:</span><span class="value">40703810502940000222</span>
+                            <button class="small-copy" data-copy="40703810502940000222">Копировать</button>
+                        </p>
+                        <p><span class="label">Банк:</span><span class="value">АО «Альфа-Банк»</span></p>
+                        <p><span class="label">Корр. счёт:</span><span class="value">30101810200000000593</span>
+                            <button class="small-copy" data-copy="30101810200000000593">Копировать</button>
+                        </p>
+                        <p><span class="label">БИК:</span><span class="value">044525593</span>
+                            <button class="small-copy" data-copy="044525593">Копировать</button>
+                        </p>
+                        <p><span class="label">Телефон:</span><span class="value">+7 950 775 76 24</span>
+                            <button class="small-copy" data-copy="+79507757624">Копировать</button>
+                        </p>
+                        <p><span class="label">E-mail:</span><span class="value">ano.spp@yandex.ru</span>
+                            <button class="small-copy" data-copy="ano.spp@yandex.ru">Копировать</button>
+                        </p>
+                        <p style="margin-top: 12px; background: #fff3e0; padding: 8px 12px; border-radius: 18px;"><span class="label">Важно:</span><span class="value">В назначении платежа — «Пожертвование на уставную деятельность»</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #fff0e0; border-radius: 20px; padding: 16px; text-align: center; font-size: 0.9rem;">
+            ❤️ Спасибо за поддержку! Любая сумма помогает нам работать дальше.<br>
+            <span style="font-size: 0.8rem; opacity: 0.8;">С любовью, команда АНО «СПП»</span>
+        </div>
+    </div>
+    <footer>
+        Благотворительная организация • Официальные реквизиты
+    </footer>
+</div>
+<div id="toast" class="toast-msg">✓ Скопировано</div>
+
+<script>
+    (function() {
+        const toggleBtn = document.getElementById('toggleDetailsBtn');
+        const detailsPanel = document.getElementById('detailsPanel');
+        
+        function updateButtonState(expanded) {
+            if(expanded) {
+                toggleBtn.classList.add('active');
+                detailsPanel.classList.add('show');
+            } else {
+                toggleBtn.classList.remove('active');
+                detailsPanel.classList.remove('show');
+            }
+        }
+        
+        let isExpanded = false;
+        toggleBtn.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            updateButtonState(isExpanded);
+        });
+        
+        updateButtonState(false);
+        
+        function showToast(message = "Скопировано") {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.style.opacity = '1';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+            }, 1800);
+        }
+        
+        function copyToClipboard(text, customMsg = null) {
+            if (!navigator.clipboard) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                const success = document.execCommand('copy');
+                document.body.removeChild(textarea);
+                if(success) showToast(customMsg || "✓ Скопировано");
+                else showToast("Ошибка копирования");
+                return;
+            }
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(customMsg || "✓ Скопировано");
+            }).catch(() => {
+                showToast("Не удалось скопировать");
+            });
+        }
+        
+        const allCopyButtons = document.querySelectorAll('[data-copy]');
+        allCopyButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let copyValue = btn.getAttribute('data-copy');
+                if(copyValue) {
+                    copyToClipboard(copyValue);
+                }
+            });
+        });
+        
+        const phoneCopyBtn = document.querySelector('.btn-copy');
+        if(phoneCopyBtn) {
+            phoneCopyBtn.addEventListener('click', () => {
+                copyToClipboard('89507757624', 'Номер телефона скопирован');
+            });
+        }
+        
+        const extraSmallCopies = document.querySelectorAll('.small-copy');
+        extraSmallCopies.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const textToCopy = btn.previousElementSibling?.innerText || btn.getAttribute('data-copy');
+                if(textToCopy && textToCopy.trim()) {
+                    copyToClipboard(textToCopy.trim());
+                } else {
+                    const parentP = btn.closest('p');
+                    if(parentP) {
+                        const valSpan = parentP.querySelector('.value');
+                        if(valSpan) copyToClipboard(valSpan.innerText.trim());
+                    }
+                }
+            });
+        });
+        
+        const bankNote = document.querySelector('.bank-details p:last-of-type .value');
+        if(bankNote && bankNote.innerText.includes('Пожертвование')) {
+        }
+    })();
+</script>
+</body>
+</html>
