@@ -12,265 +12,318 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #fef7e8;
-            color: #1a1e2b;
-            line-height: 1.4;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #faf9f7;
+            color: #2c2a28;
+            line-height: 1.45;
+            padding: 24px 20px;
         }
 
         .container {
             max-width: 680px;
             margin: 0 auto;
-            background: white;
+            background: #ffffff;
             border-radius: 32px;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
             overflow: hidden;
-            transition: all 0.2s ease;
+        }
+
+        /* акцентный оранжевый */
+        .accent-orange {
+            color: #f15a24;
         }
 
         .hero {
-            background: #f97316;
-            padding: 32px 24px 28px;
+            background: #ffffff;
+            padding: 36px 28px 24px;
             text-align: center;
-            color: white;
+            border-bottom: 2px solid #f15a24;
         }
 
         .hero h1 {
-            font-size: 1.9rem;
+            font-size: 2rem;
             font-weight: 700;
             letter-spacing: -0.3px;
+            color: #1e1e2a;
             margin-bottom: 8px;
+        }
+
+        .hero h1 span {
+            color: #f15a24;
         }
 
         .hero p {
-            font-size: 1rem;
-            opacity: 0.95;
-            font-weight: 500;
+            font-size: 0.95rem;
+            color: #5f5c58;
+            font-weight: 450;
         }
 
         .content {
-            padding: 28px 24px 32px;
+            padding: 32px 28px 36px;
         }
 
-        .message {
-            background: #fff4e6;
-            border-left: 5px solid #f97316;
-            padding: 20px 20px;
-            border-radius: 20px;
-            margin-bottom: 28px;
-            font-size: 1rem;
-        }
-
-        .message p {
-            margin-bottom: 12px;
-        }
-
-        .message strong {
-            color: #f97316;
-        }
-
-        .donation-card {
+        .message-card {
             background: #ffffff;
-            border: 1px solid #ffdec2;
-            border-radius: 28px;
-            padding: 12px 6px 12px 6px;
-            margin-bottom: 28px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            border-radius: 24px;
+            padding: 0;
+            margin-bottom: 32px;
         }
 
-        .donation-phone {
-            background: #f97316;
-            border-radius: 24px;
-            padding: 18px 20px;
-            color: white;
+        .greeting {
+            font-size: 1.35rem;
+            font-weight: 650;
+            color: #f15a24;
+            margin-bottom: 14px;
+            letter-spacing: -0.2px;
+        }
+
+        .message-text {
+            color: #2b2a28;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .message-text p {
             margin-bottom: 12px;
+        }
+
+        .highlight-block {
+            background: #fff6ef;
+            border-left: 4px solid #f15a24;
+            padding: 14px 18px;
+            border-radius: 16px;
+            margin-top: 16px;
+            font-size: 0.92rem;
+            color: #3e3a35;
+        }
+
+        .donation-section {
+            margin-bottom: 28px;
+        }
+
+        /* оранжевая карточка телефона */
+        .phone-card {
+            background: #f15a24;
+            border-radius: 28px;
+            padding: 2px;
+            margin-bottom: 24px;
+            box-shadow: 0 6px 14px rgba(241, 90, 36, 0.2);
+        }
+
+        .phone-inner {
+            background: #ffffff;
+            border-radius: 26px;
+            padding: 22px 20px;
             text-align: center;
         }
 
-        .donation-phone .label {
-            font-size: 0.85rem;
+        .phone-label {
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             font-weight: 600;
-            opacity: 0.9;
-            margin-bottom: 8px;
+            color: #f15a24;
+            margin-bottom: 12px;
         }
 
-        .phone-number {
-            font-size: 1.7rem;
+        .big-number {
+            font-size: 1.85rem;
             font-weight: 700;
-            font-family: monospace;
-            letter-spacing: 1px;
-            background: rgba(255,255,255,0.2);
+            font-family: 'SF Mono', 'Menlo', monospace;
+            background: #fef6f0;
             display: inline-block;
-            padding: 6px 18px;
+            padding: 8px 24px;
             border-radius: 60px;
-            margin: 8px 0;
+            letter-spacing: 0.5px;
+            color: #1e1e2a;
+            margin: 8px 0 6px;
         }
 
         .phone-hint {
-            font-size: 0.85rem;
-            opacity: 0.9;
+            font-size: 0.82rem;
+            color: #8f8a84;
             margin-top: 8px;
         }
 
-        .btn-copy {
-            background: white;
-            color: #f97316;
+        .copy-btn-orange {
+            background: #f15a24;
             border: none;
-            padding: 8px 18px;
+            padding: 8px 24px;
             border-radius: 40px;
-            font-weight: 600;
             font-size: 0.85rem;
-            margin-top: 12px;
+            font-weight: 600;
+            color: white;
+            margin-top: 16px;
             cursor: pointer;
             transition: 0.2s;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(241, 90, 36, 0.3);
         }
 
-        .btn-copy:hover {
-            background: #fff0e0;
-            transform: scale(0.97);
+        .copy-btn-orange:hover {
+            background: #d64612;
+            transform: scale(0.98);
         }
 
-        .detail-block {
-            background: #f9fafc;
+        .details-accordion {
+            background: #ffffff;
             border-radius: 24px;
-            margin-top: 16px;
-            padding: 8px 4px;
+            border: 2px solid #f15a24;  /* оранжевая обводка */
+            overflow: hidden;
+            margin-top: 8px;
         }
 
-        .detail-btn {
+        .accordion-btn {
             width: 100%;
-            background: transparent;
-            border: 1.5px solid #ffcf9a;
-            padding: 14px 18px;
+            background: #ffffff;
+            border: none;
+            padding: 18px 22px;
             font-size: 1rem;
             font-weight: 600;
-            border-radius: 60px;
+            text-align: left;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            color: #2c2e3a;
-            transition: all 0.2s;
-            background: white;
+            color: #1e1e2a;
+            transition: background 0.2s;
         }
 
-        .detail-btn span:first-child {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .accordion-btn:hover {
+            background: #fef8f3;
         }
 
-        .detail-btn .arrow {
+        .accordion-icon {
             font-size: 1.3rem;
-            transition: transform 0.2s;
+            color: #f15a24;
+            font-weight: 500;
+            transition: transform 0.25s ease;
         }
 
-        .detail-btn.active .arrow {
-            transform: rotate(180deg);
-        }
-
-        .detail-content {
+        .accordion-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.35s ease-out;
-            background: white;
-            border-radius: 24px;
-            margin-top: 6px;
-        }
-
-        .detail-content.show {
-            max-height: 800px;
-            transition: max-height 0.5s ease-in;
-        }
-
-        .bank-details {
-            padding: 20px 18px;
             background: #ffffff;
+            border-top: 1px solid transparent;
+        }
+
+        .accordion-content.open {
+            max-height: 1200px;
+            border-top-color: #f0e2d8;
+        }
+
+        .rekv-block {
+            padding: 6px 22px 24px 22px;
+            background: #ffffff;
+        }
+
+        .rekv-grid {
+            background: #fefbf8;
             border-radius: 24px;
-            border: 1px solid #f0e2d0;
+            padding: 20px 20px;
+            border: 1px solid #fae6da;
+        }
+
+        .rekv-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+            align-items: flex-start;
+            gap: 8px;
+            border-bottom: 1px solid #f1e4da;
+            padding-bottom: 10px;
+        }
+
+        .rekv-label {
+            font-weight: 650;
+            min-width: 115px;
+            color: #f15a24;
             font-size: 0.85rem;
         }
 
-        .bank-details p {
-            margin-bottom: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 6px;
-        }
-
-        .bank-details .label {
-            font-weight: 700;
-            min-width: 100px;
-            color: #f97316;
-        }
-
-        .bank-details .value {
-            font-weight: 500;
+        .rekv-value {
+            flex: 1;
+            color: #2f2c28;
             word-break: break-word;
+            font-size: 0.87rem;
+            font-weight: 480;
         }
 
-        .copy-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 6px;
-            flex-wrap: wrap;
-        }
-
-        .small-copy {
-            background: #f2f2f5;
-            border: none;
+        .mini-copy {
+            background: transparent;
+            border: 1px solid #f0cbb6;
             padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 0.7rem;
+            border-radius: 40px;
+            font-size: 0.68rem;
             font-weight: 500;
+            margin-left: 6px;
             cursor: pointer;
             transition: 0.2s;
+            color: #f15a24;
         }
 
-        .toast-msg {
-            position: fixed;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #1f2937;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
+        .mini-copy:hover {
+            background: #fef2e9;
+            border-color: #f15a24;
+        }
+
+        .payment-note {
+            background: #fff6ef;
+            padding: 14px 18px;
+            border-radius: 20px;
+            margin-top: 18px;
             font-size: 0.85rem;
-            opacity: 0;
-            transition: opacity 0.2s;
-            pointer-events: none;
-            z-index: 1000;
-            white-space: nowrap;
+            color: #4e4238;
+            border-left: 3px solid #f15a24;
+        }
+
+        .thankyou-block {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 20px 24px;
+            text-align: center;
+            margin-top: 28px;
+            border: 1px solid #f0e2d8;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .thankyou-text {
             font-weight: 500;
+            color: #2e2b28;
+            font-size: 0.95rem;
+        }
+
+        .thankyou-text strong {
+            color: #f15a24;
+            font-weight: 700;
         }
 
         footer {
             text-align: center;
             font-size: 0.7rem;
-            color: #aaa;
-            margin-top: 24px;
-            padding: 0 20px 24px;
+            padding: 20px 24px 26px;
+            color: #bcab9e;
+            border-top: 1px solid #f0e4dc;
+            margin-top: 6px;
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 550px) {
             body {
                 padding: 12px;
             }
+            .content {
+                padding: 24px 20px 28px;
+            }
+            .rekv-label {
+                min-width: 100px;
+            }
+            .big-number {
+                font-size: 1.45rem;
+                padding: 6px 16px;
+            }
             .hero h1 {
-                font-size: 1.6rem;
-            }
-            .phone-number {
-                font-size: 1.3rem;
-            }
-            .bank-details .label {
-                min-width: 85px;
+                font-size: 1.7rem;
             }
         }
     </style>
@@ -278,164 +331,190 @@
 <body>
 <div class="container">
     <div class="hero">
-        <h1>АНО «СПП»</h1>
+        <h1>АНО <span>«СПП»</span></h1>
         <p>Содействие поискам пропавших</p>
     </div>
     <div class="content">
-        <div class="message">
-            <p><strong>✨ Друг, привет!</strong></p>
-            <p>Чтобы проводить лекции и встречи в уюте, мы содержим помещение за свой счёт. </p>
-            <p>Будем рады любой помощи ❤️</p>
+        <div class="message-card">
+            <div class="greeting">Привет, дорогой друг ✨</div>
+            <div class="message-text">
+                <p>Чтобы проводить отрядные лекции и встречи в уюте и тепле, мы содержим это помещение на свои деньги.</p>
+                <p>Если хотите помочь — можно сделать пожертвование в пользу нашей некоммерческой организации.</p>
+            </div>
+            <div class="highlight-block">
+                Будем рады любой сумме. Спасибо, что вы с нами 💛
+            </div>
         </div>
 
-        <div class="donation-card">
-            <div class="donation-phone">
-                <div class="label">📱 Перевод по номеру телефона</div>
-                <div class="phone-number">89507757624</div>
-                <div class="phone-hint">Ольга Юрьевна З. (Сбер) — с пометкой «на подвал»</div>
-                <button class="btn-copy" data-copy="89507757624">📋 Скопировать номер</button>
+        <div class="donation-section">
+            <div class="phone-card">
+                <div class="phone-inner">
+                    <div class="phone-label">📱 ПЕРЕВОД ПО НОМЕРУ (СБЕР)</div>
+                    <div class="big-number">89507757624</div>
+                    <div class="phone-hint">Ольга Юрьевна З. • в назначении: «на подвал»</div>
+                    <button class="copy-btn-orange" id="copyPhoneBtn">Скопировать номер</button>
+                </div>
             </div>
 
-            <div class="detail-block">
-                <button class="detail-btn" id="toggleDetailsBtn">
-                    <span>🏦 Реквизиты организации (юр. лицо)</span>
-                    <span class="arrow">▼</span>
+            <div class="details-accordion">
+                <button class="accordion-btn" id="rekvToggle">
+                    <span>🏦 Реквизиты для перевода (юр. лицо)</span>
+                    <span class="accordion-icon" id="toggleIcon">⌵</span>
                 </button>
-                <div id="detailsPanel" class="detail-content">
-                    <div class="bank-details">
-                        <p><span class="label">Полное название:</span><span class="value">Автономная Некоммерческая Организация «Содействие поискам пропавших»</span></p>
-                        <p><span class="label">Сокращённо:</span><span class="value">АНО «СПП»</span></p>
-                        <p><span class="label">Директор:</span><span class="value">Землянникова Ольга Юрьевна</span></p>
-                        <p><span class="label">Юр. адрес:</span><span class="value">394021, Воронеж, ул. Минская, д. 67/1, помещ. VII</span></p>
-                        <p><span class="label">Почтовый адрес:</span><span class="value">394021, Воронеж, ул. Минская, д. 67/1, помещ. VII</span></p>
-                        <p><span class="label">ИНН / КПП:</span><span class="value">3663164048 / 366301001</span>
-                            <button class="small-copy" data-copy="3663164048 / 366301001">Копировать</button>
-                        </p>
-                        <p><span class="label">ОГРН:</span><span class="value">123360016957</span>
-                            <button class="small-copy" data-copy="123360016957">Копировать</button>
-                        </p>
-                        <p><span class="label">Расчётный счёт:</span><span class="value">40703810502940000222</span>
-                            <button class="small-copy" data-copy="40703810502940000222">Копировать</button>
-                        </p>
-                        <p><span class="label">Банк:</span><span class="value">АО «Альфа-Банк»</span></p>
-                        <p><span class="label">Корр. счёт:</span><span class="value">30101810200000000593</span>
-                            <button class="small-copy" data-copy="30101810200000000593">Копировать</button>
-                        </p>
-                        <p><span class="label">БИК:</span><span class="value">044525593</span>
-                            <button class="small-copy" data-copy="044525593">Копировать</button>
-                        </p>
-                        <p><span class="label">Телефон:</span><span class="value">+7 950 775 76 24</span>
-                            <button class="small-copy" data-copy="+79507757624">Копировать</button>
-                        </p>
-                        <p><span class="label">E-mail:</span><span class="value">ano.spp@yandex.ru</span>
-                            <button class="small-copy" data-copy="ano.spp@yandex.ru">Копировать</button>
-                        </p>
-                        <p style="margin-top: 12px; background: #fff3e0; padding: 8px 12px; border-radius: 18px;"><span class="label">Важно:</span><span class="value">В назначении платежа — «Пожертвование на уставную деятельность»</span></p>
+                <div class="accordion-content" id="rekvContent">
+                    <div class="rekv-block">
+                        <div class="rekv-grid">
+                            <div class="rekv-row">
+                                <span class="rekv-label">Полное название</span>
+                                <span class="rekv-value">Автономная Некоммерческая Организация «Содействие поискам пропавших»</span>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">Сокращённо</span>
+                                <span class="rekv-value">АНО «СПП»</span>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">Директор</span>
+                                <span class="rekv-value">Землянникова Ольга Юрьевна</span>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">Адрес</span>
+                                <span class="rekv-value">394021, Воронеж, ул. Минская, д. 67/1, помещ. VII</span>
+                                <button class="mini-copy" data-copy="394021, Воронеж, ул. Минская, д. 67/1, помещ. VII">Коп.</button>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">ИНН / КПП</span>
+                                <span class="rekv-value">3663164048 / 366301001</span>
+                                <button class="mini-copy" data-copy="3663164048 / 366301001">Коп.</button>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">ОГРН</span>
+                                <span class="rekv-value">123360016957</span>
+                                <button class="mini-copy" data-copy="123360016957">Коп.</button>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">Расчётный счёт</span>
+                                <span class="rekv-value">40703810502940000222</span>
+                                <button class="mini-copy" data-copy="40703810502940000222">Коп.</button>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">Банк</span>
+                                <span class="rekv-value">АО «Альфа-Банк»</span>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">Корр. счёт</span>
+                                <span class="rekv-value">30101810200000000593</span>
+                                <button class="mini-copy" data-copy="30101810200000000593">Коп.</button>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">БИК</span>
+                                <span class="rekv-value">044525593</span>
+                                <button class="mini-copy" data-copy="044525593">Коп.</button>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">Телефон</span>
+                                <span class="rekv-value">+7 950 775 76 24</span>
+                                <button class="mini-copy" data-copy="+79507757624">Коп.</button>
+                            </div>
+                            <div class="rekv-row">
+                                <span class="rekv-label">E-mail</span>
+                                <span class="rekv-value">ano.spp@yandex.ru</span>
+                                <button class="mini-copy" data-copy="ano.spp@yandex.ru">Коп.</button>
+                            </div>
+                            <div class="payment-note">
+                                📌 В назначении платежа обязательно укажите: <strong>«Пожертвование на уставную деятельность»</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div style="background: #fff0e0; border-radius: 20px; padding: 16px; text-align: center; font-size: 0.9rem;">
-            ❤️ Спасибо за поддержку! Любая сумма помогает нам работать дальше.<br>
-            <span style="font-size: 0.8rem; opacity: 0.8;">С любовью, команда АНО «СПП»</span>
+        <div class="thankyou-block">
+            <div class="thankyou-text">
+                С любовью, <strong>АНО «СПП»</strong><br>
+                🙏 Спасибо за поддержку
+            </div>
         </div>
     </div>
     <footer>
-        Благотворительная организация • Официальные реквизиты
+        Некоммерческая организация • Официальные реквизиты
     </footer>
 </div>
-<div id="toast" class="toast-msg">✓ Скопировано</div>
+
+<div id="toastMsg" style="position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: #f15a24; color: white; padding: 10px 24px; border-radius: 60px; font-size: 0.85rem; font-weight: 500; opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></div>
 
 <script>
     (function() {
-        const toggleBtn = document.getElementById('toggleDetailsBtn');
-        const detailsPanel = document.getElementById('detailsPanel');
-        
-        function updateButtonState(expanded) {
-            if(expanded) {
-                toggleBtn.classList.add('active');
-                detailsPanel.classList.add('show');
+        const toggleBtn = document.getElementById('rekvToggle');
+        const contentDiv = document.getElementById('rekvContent');
+        const iconSpan = document.getElementById('toggleIcon');
+        let isOpen = false;
+
+        function updateAccordion() {
+            if (isOpen) {
+                contentDiv.classList.add('open');
+                iconSpan.innerHTML = '⌃';
             } else {
-                toggleBtn.classList.remove('active');
-                detailsPanel.classList.remove('show');
+                contentDiv.classList.remove('open');
+                iconSpan.innerHTML = '⌵';
             }
         }
-        
-        let isExpanded = false;
+
         toggleBtn.addEventListener('click', () => {
-            isExpanded = !isExpanded;
-            updateButtonState(isExpanded);
+            isOpen = !isOpen;
+            updateAccordion();
         });
-        
-        updateButtonState(false);
-        
-        function showToast(message = "Скопировано") {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
+        updateAccordion();
+
+        function showMessage(text) {
+            const toast = document.getElementById('toastMsg');
+            toast.textContent = text || 'Скопировано';
             toast.style.opacity = '1';
             setTimeout(() => {
                 toast.style.opacity = '0';
             }, 1800);
         }
-        
-        function copyToClipboard(text, customMsg = null) {
+
+        function copyText(text, customMsg) {
             if (!navigator.clipboard) {
                 const textarea = document.createElement('textarea');
                 textarea.value = text;
                 document.body.appendChild(textarea);
                 textarea.select();
-                const success = document.execCommand('copy');
+                const ok = document.execCommand('copy');
                 document.body.removeChild(textarea);
-                if(success) showToast(customMsg || "✓ Скопировано");
-                else showToast("Ошибка копирования");
+                if (ok) showMessage(customMsg || '✓ Скопировано');
+                else showMessage('Не удалось скопировать');
                 return;
             }
             navigator.clipboard.writeText(text).then(() => {
-                showToast(customMsg || "✓ Скопировано");
-            }).catch(() => {
-                showToast("Не удалось скопировать");
+                showMessage(customMsg || '✓ Скопировано');
+            }).catch(() => showMessage('Ошибка копирования'));
+        }
+
+        const phoneBtn = document.getElementById('copyPhoneBtn');
+        if (phoneBtn) {
+            phoneBtn.addEventListener('click', () => {
+                copyText('89507757624', 'Номер скопирован');
             });
         }
-        
-        const allCopyButtons = document.querySelectorAll('[data-copy]');
-        allCopyButtons.forEach(btn => {
+
+        const miniBtns = document.querySelectorAll('.mini-copy');
+        miniBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                let copyValue = btn.getAttribute('data-copy');
-                if(copyValue) {
-                    copyToClipboard(copyValue);
-                }
-            });
-        });
-        
-        const phoneCopyBtn = document.querySelector('.btn-copy');
-        if(phoneCopyBtn) {
-            phoneCopyBtn.addEventListener('click', () => {
-                copyToClipboard('89507757624', 'Номер телефона скопирован');
-            });
-        }
-        
-        const extraSmallCopies = document.querySelectorAll('.small-copy');
-        extraSmallCopies.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const textToCopy = btn.previousElementSibling?.innerText || btn.getAttribute('data-copy');
-                if(textToCopy && textToCopy.trim()) {
-                    copyToClipboard(textToCopy.trim());
+                let value = btn.getAttribute('data-copy');
+                if (value) {
+                    copyText(value);
                 } else {
-                    const parentP = btn.closest('p');
-                    if(parentP) {
-                        const valSpan = parentP.querySelector('.value');
-                        if(valSpan) copyToClipboard(valSpan.innerText.trim());
+                    const parentRow = btn.closest('.rekv-row');
+                    if (parentRow) {
+                        const valueSpan = parentRow.querySelector('.rekv-value');
+                        if (valueSpan) copyText(valueSpan.innerText.trim());
                     }
                 }
             });
         });
-        
-        const bankNote = document.querySelector('.bank-details p:last-of-type .value');
-        if(bankNote && bankNote.innerText.includes('Пожертвование')) {
-        }
     })();
 </script>
 </body>
